@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 //Routes
-
+app.use('/api/people',require('./routes/pleople.routes'));
 
 app.listen(app.get('port'), ()=>{
     console.log('Server connected on port', app.get('port'));
