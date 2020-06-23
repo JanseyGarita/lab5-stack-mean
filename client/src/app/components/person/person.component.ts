@@ -4,12 +4,12 @@ import { NgForm } from '@angular/forms';
 import { Person } from 'src/app/models/person';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
-declare var M:any;
+declare var M: any;
 @Component({
   selector: 'app-person',
   templateUrl: './person.component.html',
   styleUrls: ['./person.component.scss'],
-  providers:[PersonService]
+  providers: [PersonService],
 })
 export class PersonComponent implements OnInit {
   constructor(public personService: PersonService) {}
@@ -62,8 +62,7 @@ subscribe(res=>{
   resetForm(form?: NgForm){
     if(form){
       form.reset();
-    this.personService.selectedPerson= new Person();  
+      this.personService.selectedPerson = new Person();
     }
-    
   }
 }
