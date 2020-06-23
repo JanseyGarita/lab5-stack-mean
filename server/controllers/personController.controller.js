@@ -7,7 +7,12 @@ personController.getPeople = async (req, res) => {
 };
 
 personController.createPerson = async (req, res) => {
-  const buddy = new person(req.body);
+  const buddy = new person({
+    name: req.body.name,
+    province: req.body.province,
+    dateOfBirth : req.body.dateOfBirth,
+    genre : req.body.genre
+  });
   await buddy.save();
   res.json(buddy.name + " has been added.");
 };

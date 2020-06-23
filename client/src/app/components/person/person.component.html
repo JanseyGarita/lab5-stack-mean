@@ -4,6 +4,8 @@
       <div class="card">
         <div class="card-content">
           <form #personForm="ngForm" (ngSubmit)="addPerson(personForm)">
+            
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="personService.selectedPerson._id" >
             <div class="row">
               <div class="input-field col s12">
                 <input
@@ -62,6 +64,41 @@
         </div>
       </div>
     </div>
-    <div class="col s12 m7"></div>
+    <div class="col s12 m7">
+
+   <table>
+     <thead>
+     <th>Name</th>
+     <th>Province</th>
+     <th>Date Of Birth</th>
+     <th>Genre</th>
+     <th>Actions</th>
+
+     </thead>
+     <tbody>
+      <tr *ngFor="let person of personService.people">
+
+        <td>{{person.name}}</td>
+        <td>{{person.province}}</td>
+        <td>{{person.dateOfBirth}}</td>
+        <td>{{person.genre}}</td>
+        <td>
+          <a (click)="editPerson(person)" >
+            <i class="material-icons">edit</i>
+          </a>
+          <a (click)="deletePerson(person._id)">
+            <i class="material-icons">delete</i>
+          </a>
+        </td>
+      </tr>
+
+     </tbody>
+   </table>
+
+
+
+
+
+    </div>
   </div>
 </div>
