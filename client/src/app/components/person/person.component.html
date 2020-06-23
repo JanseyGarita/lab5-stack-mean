@@ -1,11 +1,15 @@
-<div class="container">
+<div class="container" style="width: 90%; padding-top: 2em;">
   <div class="row">
     <div class="col s12 m5">
       <div class="card">
         <div class="card-content">
           <form #personForm="ngForm" (ngSubmit)="addPerson(personForm)">
-            
-            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="personService.selectedPerson._id" >
+            <input
+              type="hidden"
+              name="_id"
+              #_id="ngModel"
+              [(ngModel)]="personService.selectedPerson._id"
+            />
             <div class="row">
               <div class="input-field col s12">
                 <input
@@ -54,7 +58,10 @@
                   </button>
                 </div>
                 <div class="input-field col s12 m6">
-                  <button class="save btn btn-outline-info"  (click)="resetForm(personForm)">
+                  <button
+                    class="save btn btn-outline-info"
+                    (click)="resetForm(personForm)"
+                  >
                     Clean Fields
                   </button>
                 </div>
@@ -65,40 +72,31 @@
       </div>
     </div>
     <div class="col s12 m7">
-
-   <table>
-     <thead>
-     <th>Name</th>
-     <th>Province</th>
-     <th>Date Of Birth</th>
-     <th>Genre</th>
-     <th>Actions</th>
-
-     </thead>
-     <tbody>
-      <tr *ngFor="let person of personService.people">
-
-        <td>{{person.name}}</td>
-        <td>{{person.province}}</td>
-        <td>{{person.dateOfBirth}}</td>
-        <td>{{person.genre}}</td>
-        <td>
-          <a (click)="editPerson(person)" >
-            <i class="material-icons">edit</i>
-          </a>
-          <a (click)="deletePerson(person._id)">
-            <i class="material-icons">delete</i>
-          </a>
-        </td>
-      </tr>
-
-     </tbody>
-   </table>
-
-
-
-
-
+      <table class="responsive-table">
+        <thead>
+          <th>Name</th>
+          <th>Province</th>
+          <th>Date Of Birth</th>
+          <th>Genre</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of personService.people">
+            <td>{{ person.name }}</td>
+            <td>{{ person.province }}</td>
+            <td>{{ person.dateOfBirth }}</td>
+            <td>{{ person.genre }}</td>
+            <td>
+              <a (click)="editPerson(person)" class="btn amber accent-4 waves-effect waves-light">
+                <i class="material-icons">edit</i>
+              </a>
+              <a (click)="deletePerson(person._id)" class="btn red darken-3 waves-effect waves-light">
+                <i class="material-icons">delete</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
