@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonService } from '../../services/person.service';
+import { NgForm } from '@angular/forms';
+import { Person } from 'src/app/models/person';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
+declare var M:any;
 @Component({
   selector: 'app-person',
   templateUrl: './person.component.html',
@@ -9,7 +14,22 @@ import { PersonService } from '../../services/person.service';
 export class PersonComponent implements OnInit {
   constructor(public personService: PersonService) {}
 
-  addPerson(formData) {}
+  addPerson(formData: NgForm) {
+
+    this.personService.postPerson(formData.value)
+    .subscribe(res=>{
+      this.resetForm(formData);
+      M.toast({html:'Save Successfuly'});
+    });
+  }
 
   ngOnInit(): void {}
+
+  resetForm(form?: NgForm){
+    if(form){
+      form.reset();
+    this.personService.selectedPerson= new Person();  
+    }
+    
+  }
 }
