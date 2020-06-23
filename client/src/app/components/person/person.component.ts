@@ -19,12 +19,11 @@ export class PersonComponent implements OnInit {
 
   addPerson(formData: NgForm) {
     if (formData.value._id) {
-      /*this.personService.putPerson(formData.value).subscribe((res) => {
+      this.personService.putPerson(formData.value).subscribe((res) => {
         this.resetForm(formData);
         M.toast({ html: 'Updated!' });
         this.getPeople();
-      });*/
-      console.log(formData.value);
+      });
     } else {
       this.personService.postPerson(formData.value).subscribe((res) => {
         this.resetForm(formData);
