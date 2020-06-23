@@ -37,7 +37,7 @@
                   name="dateOfBirth"
                   #dateOfBirth="ngModel"
                   [(ngModel)]="personService.selectedPerson.dateOfBirth"
-                  placeholder="Enter your date Of Birth"
+                  placeholder="Enter your date of Birth"
                 />
               </div>
 
@@ -53,15 +53,17 @@
 
               <div class="card-action">
                 <div class="input-field col s12 m6">
-                  <button class="save btn btn-outline-success">
+                  <button class="save btn">
+                    <i class="material-icons left">save</i>
                     Save
                   </button>
                 </div>
                 <div class="input-field col s12 m6">
                   <button
-                    class="save btn btn-outline-info"
+                    class="save btn blue-grey darken-4"
                     (click)="resetForm(personForm)"
                   >
+                    <i class="material-icons left">backspace</i>
                     Clean Fields
                   </button>
                 </div>
@@ -87,10 +89,16 @@
             <td>{{ person.dateOfBirth }}</td>
             <td>{{ person.genre }}</td>
             <td>
-              <a (click)="editPerson(person)" class="btn amber accent-4 waves-effect waves-light">
+              <a
+                (click)="editPerson(person)"
+                class="btn amber accent-4 waves-effect waves-light"
+              >
                 <i class="material-icons">edit</i>
               </a>
-              <a (click)="deletePerson(person._id)" class="btn red darken-3 waves-effect waves-light">
+              <a
+                (click)="deletePerson(person._id)"
+                class="btn red darken-3 waves-effect waves-light"
+              >
                 <i class="material-icons">delete</i>
               </a>
             </td>
