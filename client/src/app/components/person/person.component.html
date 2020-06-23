@@ -5,40 +5,63 @@
         <div class="card-content">
           <form #personForm="ngForm" (ngSubmit)="addPerson(personForm)">
             <div class="row">
-             <div class="input-field col s12">
-              <input type="text" name="name" #name="ngModel" 
-               [(ngModel)]="personService.selectedPerson.name" placeholder="Enter your Name">
-             </div>
+              <div class="input-field col s12">
+                <input
+                  type="text"
+                  name="name"
+                  #name="ngModel"
+                  [(ngModel)]="personService.selectedPerson.name"
+                  placeholder="Enter your Name"
+                />
+              </div>
 
-             <div class="input-field col s12">
-              <input type="text" name="province" #province="ngModel" 
-               [(ngModel)]="personService.selectedPerson.province" placeholder="Enter your Province">
-             </div>
+              <div class="input-field col s12">
+                <input
+                  type="text"
+                  name="province"
+                  #province="ngModel"
+                  [(ngModel)]="personService.selectedPerson.province"
+                  placeholder="Enter your Province"
+                />
+              </div>
 
-             <div class="input-field col s12">
-              <input type="date" name="dateOfBirth" #dateOfBirth="ngModel" 
-               [(ngModel)]="personService.selectedPerson.dateOfBirth" placeholder="Enter your date Of Birth">
-             </div>
+              <div class="input-field col s12">
+                <input
+                  type="date"
+                  name="dateOfBirth"
+                  #dateOfBirth="ngModel"
+                  [(ngModel)]="personService.selectedPerson.dateOfBirth"
+                  placeholder="Enter your date Of Birth"
+                />
+              </div>
 
-             <div class="input-field col s12">
-              <input type="text" name="genre" #genre="ngModel" 
-               [(ngModel)]="personService.selectedPerson.genre" placeholder="Enter your genre">
-             </div>
+              <div class="input-field col s12">
+                <input
+                  type="text"
+                  name="genre"
+                  #genre="ngModel"
+                  [(ngModel)]="personService.selectedPerson.genre"
+                  placeholder="Enter your genre"
+                />
+              </div>
 
-             <div class="card-action">
-               <div class="input-field col s12 m12">
-                 <button class="save btn btn-outline-success left">Save</button>
-                 <button class="save btn btn-outline-info right">Clean Fields</button>
-               </div>
-             </div>
+              <div class="card-action">
+                <div class="input-field col s12 m6">
+                  <button class="save btn btn-outline-success">
+                    Save
+                  </button>
+                </div>
+                <div class="input-field col s12 m6">
+                  <button class="save btn btn-outline-info">
+                    Clean Fields
+                  </button>
+                </div>
+              </div>
             </div>
           </form>
         </div>
       </div>
     </div>
-    <div class="col s12 m7">
-
-
-    </div>
+    <div class="col s12 m7"></div>
   </div>
 </div>
