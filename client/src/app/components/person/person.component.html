@@ -4,7 +4,28 @@
       <div class="card">
         <div class="card-content">
           <form #personForm="ngForm" (ngSubmit)="addPerson(personForm)">
-              FDAA
+            <div class="row">
+             <div class="input-field col s12">
+              <input type="text" name="name" #name="ngModel" 
+               [(ngModel)]="personService.selectedPerson.name" placeholder="Enter your Name">
+             </div>
+
+             <div class="input-field col s12">
+              <input type="text" name="province" #privince="ngModel" 
+               [(ngModel)]="personService.selectedPerson.province" placeholder="Enter your Province">
+             </div>
+
+             <div class="input-field col s12">
+              <input type="date" name="dateOfBirth" #dateOfBirth="ngModel" 
+               [(ngModel)]="personService.selectedPerson.dateOfBirth" placeholder="Enter your date Of Birth">
+             </div>
+
+             <div class="input-field col s12">
+              <input type="text" name="genre" #genre="ngModel" 
+               [(ngModel)]="personService.selectedPerson.genre" placeholder="Enter your genre">
+             </div>
+
+            </div>
           </form>
         </div>
       </div>
